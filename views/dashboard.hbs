@@ -1,3 +1,26 @@
 <h6>Dashboard</h6>
 <h1>Welome {{name}}</h1>
-<p>Here are your stories</p>
+
+{{#if stories}}
+    <table>
+        <h5>Here are your stories</h5>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each stories}}
+                <tr>
+                    <td><a href='/stories/{{_id}}'></a>{{title}}</td>
+                    <td>{{createdAt}}</td>
+                    <td><span class='dash-status'>{{status}}</span></td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>You haven't created any stories</p>
+{{/if}}
