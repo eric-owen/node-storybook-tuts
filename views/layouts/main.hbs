@@ -13,12 +13,19 @@
             href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'
         />
         <link rel='stylesheet' href='/css/style.css' />
+    </head>
+    <body>
+        {{> _header}}
+        <div class='container'>
+            {{{body}}}
+        </div>
+
+
         <script
             src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'
-            defer
         ></script>
-    </head>
-    <body class='container'>
-        {{{body}}}
+        <script>
+            M.Sidenav.init(document.querySelector('.sidenav'))
+        </script>
     </body>
 </html>
